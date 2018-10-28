@@ -1,0 +1,17 @@
+/x64
+/SFS/x64
+/bin/SFS.pdb
+/bin/SFS.iobj
+/bin/SFS.ipdb
+/SFS.VC.db
+/bin/opencv_world330.dll
+/bin/opencv_world330d.dll
+/SFS.VC.VC.opendb
+/.vs
+/bin/SFS.exe
+/bin/freeglut.dll
+/bin/glew32.dll
+/bin/GLU.DLL
+/bin/glut.dll
+/bin/glut32.dll
+/bin/OPENGL.DLL
