@@ -15,6 +15,7 @@
 #include "ShapefromSilhouettes.h"
 #include <algorithm>
 #include "DataViewer.h"
+#include <chrono>
 
 #pragma  warning(disable:4996)
 
@@ -63,11 +64,15 @@ int main(int argc, char** argv)
 	}
 
 	// Reconstruct 3D point clouds using SfS algorithm.
-	sfs.boundingBox(0.4, 2.2, -0.3, 1.3, -1.8, 2.7, 64, 64, 128);
-//	sfs.boundingBox(0.4, 2.2, -0.3, 1.3, -1.8, 2.7, 20, 20, 30);
+//	sfs.boundingBox(0.4, 2.2, -0.3, 1.3, -1.8, 2.7, 64, 64, 128);
+	sfs.boundingBox(0.4, 2.2, -0.3, 1.3, -1.8, 2.7, 20, 20, 30);
 	sfs.extract_Silhouette(imgs);
 	sfs.projMatrix(projs);
+	std::chrono::steady_clock::time_point  now = std::chrono::steady_clock::now();
 	std::vector<cv::Point3f>& cloudpoints= sfs.visualHull();
+	auto end_time = std::chrono::steady_clock::now();
+	std::chrono::duration<double> time_span = std::chrono::duration_cast<std::chrono::duration<double>>(end_time - now);
+	printf("number of points: %d,  cost time: %fs\n", cloudpoints.size(), time_span);
 
 	// Show the reconstructed 3D point clouds.
 	pclViewer::CDataViewer viewer;
