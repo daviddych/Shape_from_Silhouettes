@@ -3,7 +3,7 @@ Generating 3D point clouds from their silhouettes in a sequence of images.
 
 compile:
 	tools: vs2015.
-	but, before compile this code, you should download and put twe file "bin/opencv_world330.dll" and "bin/opencv_world330d.dll", they are two bigger, I remove from the "bin" folder.
+	but, before compile this code, you should download and put two file "bin/opencv_world330.dll" and "bin/opencv_world330d.dll", they are two bigger, I remove from the "bin" folder.
 	
 running:
 	After compilation, the SFS.exe file will be generated under the "bin" folder and double click to run.
