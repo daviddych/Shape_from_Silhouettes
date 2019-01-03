@@ -29,6 +29,7 @@ public:
 					infile >> img.at<float>(r, c);
 			}
 		}
+		infile.close();
 		return img;
 	}
 };

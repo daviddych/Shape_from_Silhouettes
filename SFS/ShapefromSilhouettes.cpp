@@ -142,15 +142,16 @@ void CShapefromSilhouettes::linspace(float minv, float maxv, ushort n, FloatArra
 
 std::vector<cv::Point3f>& CShapefromSilhouettes::visualHull()
 {
+	int r{ 0 }, c{ 0 };
 	for (int n = 0; n<m_sils.size(); ++n)
 	{
-#pragma omp parallel for  
+#pragma omp parallel for  private(r, c)
 		for (int i=0; i<m_nx*m_ny*m_nz; ++i)
 		{
 			Mat point2D = m_projs[n] * m_T * m_voxels[i];
 
-			int c = ceil(point2D.at<float>(0, 0) / point2D.at<float>(2, 0));
-			int r = ceil(point2D.at<float>(1, 0) / point2D.at<float>(2, 0));
+			c = ceil(point2D.at<float>(0, 0) / point2D.at<float>(2, 0));
+			r = ceil(point2D.at<float>(1, 0) / point2D.at<float>(2, 0));
 
 			if (m_sils[n].at<uchar>(r, c) == 255) 
 			{
