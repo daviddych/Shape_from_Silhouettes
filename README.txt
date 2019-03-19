@@ -13,5 +13,4 @@ running:
 		/bin:  store the SFS.exe and necessary dynamic library files < freeglut.dll, glew32.dll, GLU.DLL, glut.dll, glut32.dll, opencv_world330.dll, opencv_world330d.dll, OPENGL.DLL >.
 
 
-Matlab code: 
-https://github.com/KKeishiro/Shape-from-Silhouettes
+["Matlab code:"](https://github.com/KKeishiro/Shape-from-Silhouettes)
