@@ -1,4 +1,6 @@
 # SFS
+![Screenshots](./Screenshots.jpg)
+
 Generating 3D point clouds from their silhouettes in a sequence of images.
 
 compile:
